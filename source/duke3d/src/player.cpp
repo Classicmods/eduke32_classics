@@ -1668,7 +1668,7 @@ static void P_DisplaySpit(void)
 
     for (bssize_t i=0; i < pPlayer->numloogs; i++)
     {
-        int const rotAng = klabs(sintable[((loogCounter + i) << 5) & 2047]) >> 5;
+        int const rotAng = (int)klabs(sintable[((loogCounter + i) << 5) & 2047]) >> 5;
         int const rotZoom  = 4096 + ((loogCounter + i) << 9);
         int const rotX     = (-fix16_to_int(g_player[screenpeek].input->q16avel) >> 1) + (sintable[((loogCounter + i) << 6) & 2047] >> 10);
 
